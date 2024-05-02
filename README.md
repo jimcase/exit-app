@@ -1,0 +1,1 @@
+# -capacitor-community-exit-app
