@@ -1,6 +1,6 @@
 {
-  "name": "@capacitor-community/exit-app",
-  "version": "0.0.1",
+  "name": "capacitor-exit-app",
+  "version": "1.0.1",
   "description": "This package has the ability to shut down the app in the capacitor environment.",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
@@ -11,7 +11,7 @@
     "android/build.gradle",
     "dist/",
     "ios/Plugin/",
-    "CapacitorCommunityExitApp.podspec"
+    "CapacitorExitApp.podspec"
   ],
   "author": "JaeHyeok-Han",
   "license": "MIT",
