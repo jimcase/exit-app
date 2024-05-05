@@ -9,13 +9,6 @@ import Capacitor
 public class ExitAppPlugin: CAPPlugin {
     private let implementation = ExitApp()
 
-    @objc func echo(_ call: CAPPluginCall) {
-        let value = call.getString("value") ?? ""
-        call.resolve([
-            "value": implementation.echo(value)
-        ])
-    }
-
     @objc func exitApp(_ call: CAPPluginCall) {
         call.resolve()
         exit(0)
