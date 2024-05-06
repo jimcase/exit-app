@@ -1,11 +1,11 @@
-# @capacitor-community/exit-app
+# capacitor-exit-app
 
 This package has the ability to shut down the app in the capacitor environment.
 
 ## Install
 
 ```bash
-npm install @capacitor-community/exit-app
+npm install capacitor-exit-app
 npx cap sync
 ```
 
