@@ -15,7 +15,7 @@ public class ExitAppPlugin extends Plugin {
     public void exitApp(PluginCall call) {
         unsetAppListeners();
         call.resolve();
-        getBridge().getActivity().finish();
+        System.exit(0);
     }
 
     private void unsetAppListeners() {

@@ -10,7 +10,9 @@ public class ExitAppPlugin: CAPPlugin {
     private let implementation = ExitApp()
 
     @objc func exitApp(_ call: CAPPluginCall) {
+        DispatchQueue.main.async {
+            exit(0)
+        }
         call.resolve()
-        exit(0)
     }
 }
