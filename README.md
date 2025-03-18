@@ -5,11 +5,11 @@ This package has the ability to shut down the app in the capacitor environment.
 ## Install
 
 ```bash
-npm install capacitor-exit-app
+npm install @jimcase/capacitor-exit-app
 npx cap sync
 ```
 
-## API
+### Typescript API
 
 <docgen-index>
 
@@ -26,6 +26,24 @@ npx cap sync
 exitApp() => Promise<void>
 ```
 
---------------------
+##### It will execute the following native code:
+#### iOS
+```swift
+@objc func exitApp(_ call: CAPPluginCall) {
+    DispatchQueue.main.async {
+        exit(0)
+    }
+    call.resolve()
+}
+```
+
+#### Android
+```java
+public void exitApp(PluginCall call) {
+        unsetAppListeners();
+        call.resolve();
+        System.exit(0);
+}
+```
 
 </docgen-api>

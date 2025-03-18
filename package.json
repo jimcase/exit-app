@@ -1,6 +1,6 @@
 {
   "name": "capacitor-exit-app",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "This package has the ability to shut down the app in the capacitor environment.",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
@@ -13,14 +13,14 @@
     "ios/Plugin/",
     "CapacitorExitApp.podspec"
   ],
-  "author": "JaeHyeok-Han",
+  "author": "jimase",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/JaeHyeok-Han/exit-app.git"
+    "url": "git+https://github.com/jimcase/exit-app.git"
   },
   "bugs": {
-    "url": "https://github.com/JaeHyeok-Han/exit-app/issues"
+    "url": "https://github.com/jimcase/exit-app/issues"
   },
   "keywords": [
     "capacitor",
@@ -44,10 +44,10 @@
     "prepublishOnly": "npm run build"
   },
   "devDependencies": {
-    "@capacitor/android": "^6.0.0",
-    "@capacitor/core": "^6.0.0",
+    "@capacitor/android": "^7.0.0",
+    "@capacitor/core": "^7.0.0",
     "@capacitor/docgen": "^0.2.2",
-    "@capacitor/ios": "^6.0.0",
+    "@capacitor/ios": "^7.0.0",
     "@ionic/eslint-config": "^0.3.0",
     "@ionic/prettier-config": "^1.0.1",
     "@ionic/swiftlint-config": "^1.1.2",
@@ -60,7 +60,7 @@
     "typescript": "~4.1.5"
   },
   "peerDependencies": {
-    "@capacitor/core": "^6.0.0"
+    "@capacitor/core": "^7.0.0"
   },
   "prettier": "@ionic/prettier-config",
   "swiftlint": "@ionic/swiftlint-config",
