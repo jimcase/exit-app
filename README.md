@@ -26,24 +26,6 @@ npx cap sync
 exitApp() => Promise<void>
 ```
 
-##### It will execute the following native code:
-#### iOS
-```swift
-@objc func exitApp(_ call: CAPPluginCall) {
-    DispatchQueue.main.async {
-        exit(0)
-    }
-    call.resolve()
-}
-```
-
-#### Android
-```java
-public void exitApp(PluginCall call) {
-        unsetAppListeners();
-        call.resolve();
-        System.exit(0);
-}
-```
+--------------------
 
 </docgen-api>
