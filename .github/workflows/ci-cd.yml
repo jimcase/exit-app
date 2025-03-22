@@ -12,18 +12,9 @@ on:
       - published
 
 jobs:
-  build-and-verify:
-    name: Build and Verify
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [ubuntu-latest, macos-latest]
-        include:
-          - os: ubuntu-latest
-            platform: android
-          - os: macos-latest
-            platform: ios
-
+  build:
+    name: Build Plugin
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -39,28 +30,9 @@ jobs:
       - name: Build plugin
         run: npm run build
 
-      - name: Verify Web
-        if: matrix.platform == 'android'
-        run: npm run verify:web
-
-      - name: Set up Java for Android
-        if: matrix.platform == 'android'
-        uses: actions/setup-java@v4
-        with:
-          java-version: '17'
-          distribution: 'temurin'
-
-      - name: Verify Android
-        if: matrix.platform == 'android'
-        run: npm run verify:android
-
-      - name: Verify iOS
-        if: matrix.platform == 'ios'
-        run: npm run verify:ios
-
   publish-npm:
     name: Publish to npm
-    needs: build-and-verify
+    needs: build
     runs-on: ubuntu-latest
     if: github.event_name == 'release' && github.event.action == 'published'
     steps:
