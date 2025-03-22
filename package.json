@@ -1,6 +1,6 @@
 {
   "name": "@jimcase/capacitor-exit-app",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "This package has the ability to shut down the app in the capacitor environment.",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
