@@ -31,27 +31,34 @@ jobs:
         run: npm run build
 
   publish-npm:
-    name: Publish to npm
-    needs: build
-    runs-on: ubuntu-latest
-    if: github.event_name == 'release' && github.event.action == 'published'
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+  name: Publish to npm
+  needs: build
+  runs-on: ubuntu-latest
+  if: github.event_name == 'release' && github.event.action == 'published'
+  steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-          registry-url: 'https://registry.npmjs.org'
+    - name: Set up Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+        registry-url: 'https://registry.npmjs.org'
 
-      - name: Install dependencies
-        run: npm install
+    - name: Install dependencies
+      run: npm install
 
-      - name: Build plugin
-        run: npm run build
+    - name: Build plugin
+      run: npm run build
 
-      - name: Publish to npm
-        run: npm publish --access public
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+    - name: Debug npm configuration
+      run: |
+        npm config list
+        echo "NPM_TOKEN is set to: ${NPM_TOKEN}"
+      env:
+        NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+    - name: Publish to npm
+      run: npm publish --access public
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
